@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+
+<html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>NeoCrystal | Advanced PMMA Solutions</title>
+
+<meta name="description" content="NeoCrystal - High-performance transparent PMMA solutions for architecture, interiors, bathrooms and advanced applications.">
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        color: #111;
+        background: #fff;
+        line-height: 1.6;
+    }
+
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    img {
+        max-width: 100%;
+        display: block;
+    }
+
+    /* =========================
+       HEADER
+    ========================= */
+
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 76px;
+        background: rgba(255,255,255,0.96);
+        border-bottom: 1px solid #e8e8e8;
+        z-index: 1000;
+    }
+
+    .nav {
+        max-width: 1280px;
+        height: 100%;
+        margin: 0 auto;
+        padding: 0 30px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .logo {
+        font-size: 25px;
+        font-weight: 800;
+        letter-spacing: -0.5px;
+    }
+
+    .logo span {
+        font-weight: 400;
+        color: #777;
+    }
+
+    nav {
+        display: flex;
+        gap: 34px;
+    }
+
+    nav a {
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        color: #333;
+        transition: 0.3s;
+    }
+
+    nav a:hover {
+        color: #888;
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+        min-height: 100vh;
+        padding: 150px 30px 100px;
+
+        display: flex;
+        align-items: center;
+
+        background:
+            linear-gradient(
+                90deg,
+                rgba(255,255,255,1) 0%,
+                rgba(255,255,255,0.94) 45%,
+                rgba(255,255,255,0.25) 100%
+            ),
+            radial-gradient(circle at 80% 40%, #e9edf0 0%, #ffffff 50%);
+    }
+
+    .hero-inner {
+        max-width: 1280px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .eyebrow {
+        font-size: 13px;
+        letter-spacing: 3px;
+        font-weight: 700;
+        color: #777;
+        margin-bottom: 25px;
+    }
+
+    .hero h1 {
+        font-size: clamp(48px, 7vw, 92px);
+        line-height: 0.98;
+        letter-spacing: -4px;
+        font-weight: 800;
+        max-width: 850px;
+        margin-bottom: 35px;
+    }
+
+    .hero h1 span {
+        color: #777;
+    }
+
+    .hero-text {
+        max-width: 620px;
+        font-size: 18px;
+        color: #555;
+        line-height: 1.8;
+        margin-bottom: 45px;
+    }
+
+    .hero-buttons {
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 15px 27px;
+        border: 1px solid #111;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        transition: 0.3s;
+    }
+
+    .btn-dark {
+        background: #111;
+        color: #fff;
+    }
+
+    .btn-dark:hover {
+        background: #444;
+    }
+
+    .btn-light:hover {
+        background: #111;
+        color: #fff;
+    }
+
+    /* =========================
+       COMMON
+    ========================= */
+
+    section {
+        padding: 120px 30px;
+    }
+
+    .container {
+        max-width: 1280px;
+        margin: 0 auto;
+    }
+
+    .section-label {
+        font-size: 12px;
+        letter-spacing: 3px;
+        font-weight: 700;
+        color: #888;
+        margin-bottom: 18px;
+    }
+
+    .section-title {
+        font-size: clamp(36px, 5vw, 60px);
+        line-height: 1.1;
+        letter-spacing: -2px;
+        margin-bottom: 30px;
+    }
+
+    .section-description {
+        max-width: 700px;
+        font-size: 17px;
+        color: #666;
+        line-height: 1.8;
+    }
+
+    /* =========================
+       ABOUT
+    ========================= */
+
+    .about {
+        background: #f6f6f6;
+    }
+
+    .about-grid {
+        margin-top: 70px;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 70px;
+        align-items: center;
+    }
+
+    .about-visual {
+        min-height: 520px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        background:
+            linear-gradient(135deg, #ffffff, #dfe4e7);
+
+        border: 1px solid #ddd;
+    }
+
+    .crystal {
+        width: 65%;
+        height: 65%;
+
+        border: 8px solid rgba(255,255,255,0.85);
+
+        box-shadow:
+            0 25px 60px rgba(0,0,0,0.15),
+            inset 0 0 30px rgba(255,255,255,0.8);
+
+        transform: rotate(-8deg);
+
+        background: rgba(255,255,255,0.25);
+    }
+
+    .about-copy h3 {
+        font-size: 30px;
+        line-height: 1.3;
+        margin-bottom: 25px;
+    }
+
+    .about-copy p {
+        color: #666;
+        margin-bottom: 20px;
+    }
+
+    /* =========================
+       PRODUCTS
+    ========================= */
+
+    .products-grid {
+        margin-top: 65px;
+
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 22px;
+    }
+
+    .product-card {
+        border: 1px solid #ddd;
+        padding: 35px;
+        min-height: 300px;
+        transition: 0.3s;
+    }
+
+    .product-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+    }
+
+    .product-number {
+        font-size: 12px;
+        color: #999;
+        letter-spacing: 2px;
+        margin-bottom: 50px;
+    }
+
+    .product-card h3 {
+        font-size: 25px;
+        margin-bottom: 18px;
+    }
+
+    .product-card p {
+        color: #666;
+        font-size: 15px;
+    }
+
+    /* =========================
+       PERFORMANCE
+    ========================= */
+
+    .performance {
+        background: #111;
+        color: #fff;
+    }
+
+    .performance .section-label {
+        color: #999;
+    }
+
+    .performance .section-description {
+        color: #bbb;
+    }
+
+    .spec-grid {
+        margin-top: 65px;
+
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1px;
+
+        background: #444;
+    }
+
+    .spec {
+        padding: 40px 25px;
+        background: #111;
+    }
+
+    .spec strong {
+        display: block;
+        font-size: 42px;
+        margin-bottom: 10px;
+        letter-spacing: -2px;
+    }
+
+    .spec span {
+        font-size: 13px;
+        color: #aaa;
+        line-height: 1.5;
+    }
+
+    /* =========================
+       PROJECTS
+    ========================= */
+
+    .projects {
+        background: #f6f6f6;
+    }
+
+    .project-grid {
+        margin-top: 65px;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 22px;
+    }
+
+    .project {
+        min-height: 380px;
+        padding: 35px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+
+        background:
+            linear-gradient(
+                145deg,
+                #e9ecef,
+                #cfd4d8
+            );
+
+        position: relative;
+        overflow: hidden;
+    }
+
+    .project::before {
+        content: "";
+        position: absolute;
+        width: 180px;
+        height: 300px;
+
+        border: 4px solid rgba(255,255,255,0.7);
+
+        transform: rotate(25deg);
+
+        top: -80px;
+        right: 80px;
+    }
+
+    .project-content {
+        position: relative;
+        z-index: 2;
+    }
+
+    .project small {
+        color: #666;
+        letter-spacing: 2px;
+        font-size: 11px;
+    }
+
+    .project h3 {
+        font-size: 30px;
+        margin-top: 8px;
+    }
+
+    /* =========================
+       APPLICATION
+    ========================= */
+
+    .application-grid {
+        margin-top: 65px;
+
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 18px;
+    }
+
+    .application-card {
+        padding: 35px 25px;
+        border-top: 2px solid #111;
+    }
+
+    .application-card h3 {
+        font-size: 21px;
+        margin-bottom: 15px;
+    }
+
+    .application-card p {
+        font-size: 14px;
+        color: #666;
+    }
+
+    /* =========================
+       CONTACT
+    ========================= */
+
+    .contact {
+        background: #f6f6f6;
+    }
+
+    .contact-box {
+        margin-top: 60px;
+        padding: 60px;
+
+        background: #fff;
+        border: 1px solid #ddd;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+    }
+
+    .contact-box h3 {
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+
+    .contact-box p {
+        color: #666;
+        margin-bottom: 10px;
+    }
+
+    .contact-info {
+        font-size: 16px;
+    }
+
+    .contact-info strong {
+        display: inline-block;
+        min-width: 90px;
+        color: #111;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+        background: #111;
+        color: #fff;
+        padding: 50px 30px;
+    }
+
+    .footer-inner {
+        max-width: 1280px;
+        margin: 0 auto;
+
+        display: flex;
+        justify-content: space-between;
+        gap: 30px;
+        flex-wrap: wrap;
+    }
+
+    footer p {
+        font-size: 12px;
+        color: #999;
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 900px) {
+
+        header {
+            height: 68px;
+        }
+
+        .nav {
+            padding: 0 20px;
+        }
+
+        nav {
+            display: none;
+        }
+
+        section {
+            padding: 85px 20px;
+        }
+
+        .hero {
+            padding: 130px 20px 80px;
+        }
+
+        .hero h1 {
+            letter-spacing: -2px;
+        }
+
+        .about-grid,
+        .contact-box {
+            grid-template-columns: 1fr;
+        }
+
+        .products-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .spec-grid {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .project-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .application-grid {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .about-visual {
+            min-height: 350px;
+        }
+
+        .contact-box {
+            padding: 35px 25px;
+        }
+    }
+
+    @media (max-width: 550px) {
+
+        .hero h1 {
+            font-size: 48px;
+        }
+
+        .hero-text {
+            font-size: 16px;
+        }
+
+        .spec-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .application-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .project {
+            min-height: 300px;
+        }
+    }
+</style>
+
+</head>
+
+<body>
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+    <div class="nav">
+
+        <a href="#home" class="logo">
+            Neo<span>Crystal</span>
+        </a>
+
+        <nav>
+            <a href="#about">ABOUT</a>
+            <a href="#products">PRODUCTS</a>
+            <a href="#projects">PROJECTS</a>
+            <a href="#application">APPLICATION</a>
+            <a href="#contact">CONTACT</a>
+        </nav>
+
+    </div>
+</header>
+
+
+<!-- =========================
+     HOME
+========================= -->
+
+<section id="home" class="hero">
+
+    <div class="hero-inner">
+
+        <div class="eyebrow">
+            ADVANCED PMMA SOLUTIONS
+        </div>
+
+        <h1>
+            Beyond<br>
+            <span>Transparency.</span>
+        </h1>
+
+        <p class="hero-text">
+            NeoCrystal develops high-performance transparent PMMA
+            solutions designed for architecture, interiors,
+            bathrooms and advanced applications.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#products" class="btn btn-dark">
+                EXPLORE PRODUCTS
+            </a>
+
+            <a href="#contact" class="btn btn-light">
+                CONTACT US
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section id="about" class="about">
+
+    <div class="container">
+
+        <div class="section-label">
+            01 / ABOUT
+        </div>
+
+        <h2 class="section-title">
+            A new standard<br>
+            for transparent materials.
+        </h2>
+
+        <p class="section-description">
+            NeoCrystal focuses on advanced PMMA solutions that combine
+            transparency, surface hardness, lightweight construction
+            and practical performance.
+        </p>
+
+
+        <div class="about-grid">
+
+            <div class="about-visual">
+                <div class="crystal"></div>
+            </div>
+
+
+            <div class="about-copy">
+
+                <h3>
+                    Transparency is only<br>
+                    the beginning.
+                </h3>
+
+                <p>
+                    Conventional transparent materials have long been
+                    limited by weight, impact safety, surface durability
+                    and processing requirements.
+                </p>
+
+                <p>
+                    NeoCrystal approaches PMMA from a different
+                    perspective — combining optical clarity with
+                    practical performance for demanding applications.
+                </p>
+
+                <p>
+                    From architectural interiors to premium bathroom
+                    environments, we aim to provide materials that are
+                    lighter, safer and easier to apply.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PRODUCTS
+========================= -->
+
+<section id="products">
+
+    <div class="container">
+
+        <div class="section-label">
+            02 / PRODUCTS
+        </div>
+
+        <h2 class="section-title">
+            Engineered for<br>
+            demanding applications.
+        </h2>
+
+        <p class="section-description">
+            NeoCrystal products are developed around performance,
+            durability and design flexibility.
+        </p>
+
+
+        <div class="products-grid">
+
+            <div class="product-card">
+
+                <div class="product-number">
+                    PRODUCT 01
+                </div>
+
+                <h3>
+                    NeoCrystal Sheet
+                </h3>
+
+                <p>
+                    High-transparency PMMA sheet designed for
+                    architectural and interior applications.
+                </p>
+
+            </div>
+
+
+            <div class="product-card">
+
+                <div class="product-number">
+                    PRODUCT 02
+                </div>
+
+                <h3>
+                    NeoCrystal Door
+                </h3>
+
+                <p>
+                    Transparent PMMA door solutions combining
+                    lightweight construction with premium appearance.
+                </p>
+
+            </div>
+
+
+            <div class="product-card">
+
+                <div class="product-number">
+                    PRODUCT 03
+                </div>
+
+                <h3>
+                    Custom Solutions
+                </h3>
+
+                <p>
+                    Customized PMMA solutions for projects requiring
+                    specific dimensions, processing and performance.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PERFORMANCE
+========================= -->
+
+<section class="performance">
+
+    <div class="container">
+
+        <div class="section-label">
+            PERFORMANCE
+        </div>
+
+        <h2 class="section-title">
+            Performance<br>
+            that makes a difference.
+        </h2>
+
+        <p class="section-description">
+            Key performance characteristics of NeoCrystal materials.
+        </p>
+
+
+        <div class="spec-grid">
+
+            <div class="spec">
+                <strong>≥92%</strong>
+                <span>
+                    LIGHT TRANSMITTANCE
+                </span>
+            </div>
+
+            <div class="spec">
+                <strong>7H</strong>
+                <span>
+                    PENCIL HARDNESS
+                </span>
+            </div>
+
+            <div class="spec">
+                <strong>1/3</strong>
+                <span>
+                    APPROX. WEIGHT OF TEMPERED GLASS
+                </span>
+            </div>
+
+            <div class="spec">
+                <strong>0.18–0.25</strong>
+                <span>
+                    THERMAL CONDUCTIVITY<br>
+                    W/m·K
+                </span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     REAL PROJECTS
+========================= -->
+
+<section id="projects" class="projects">
+
+    <div class="container">
+
+        <div class="section-label">
+            03 / REAL PROJECTS
+        </div>
+
+        <h2 class="section-title">
+            From material<br>
+            to real-world application.
+        </h2>
+
+        <p class="section-description">
+            Selected applications and project references will be
+            introduced here as NeoCrystal projects expand.
+        </p>
+
+
+        <div class="project-grid">
+
+            <div class="project">
+
+                <div class="project-content">
+
+                    <small>
+                        ARCHITECTURE
+                    </small>
+
+                    <h3>
+                        Architectural Interiors
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+            <div class="project">
+
+                <div class="project-content">
+
+                    <small>
+                        BATHROOM
+                    </small>
+
+                    <h3>
+                        Premium Bathroom
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+            <div class="project">
+
+                <div class="project-content">
+
+                    <small>
+                        INTERIOR
+                    </small>
+
+                    <h3>
+                        Interior Applications
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+            <div class="project">
+
+                <div class="project-content">
+
+                    <small>
+                        CUSTOM
+                    </small>
+
+                    <h3>
+                        Custom Solutions
+                    </h3>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     APPLICATION
+========================= -->
+
+<section id="application">
+
+    <div class="container">
+
+        <div class="section-label">
+            04 / APPLICATION
+        </div>
+
+        <h2 class="section-title">
+            Designed for<br>
+            more possibilities.
+        </h2>
+
+        <p class="section-description">
+            NeoCrystal can be applied across a wide range of
+            architectural and industrial environments.
+        </p>
+
+
+        <div class="application-grid">
+
+            <div class="application-card">
+
+                <h3>
+                    Architecture
+                </h3>
+
+                <p>
+                    Partitions, glazing alternatives and
+                    architectural elements.
+                </p>
+
+            </div>
+
+
+            <div class="application-card">
+
+                <h3>
+                    Bathroom
+                </h3>
+
+                <p>
+                    Shower doors, partitions and premium
+                    bathroom environments.
+                </p>
+
+            </div>
+
+
+            <div class="application-card">
+
+                <h3>
+                    Interior
+                </h3>
+
+                <p>
+                    Furniture, displays and high-end
+                    interior applications.
+                </p>
+
+            </div>
+
+
+            <div class="application-card">
+
+                <h3>
+                    Custom
+                </h3>
+
+                <p>
+                    Specialized projects requiring
+                    customized PMMA solutions.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section id="contact" class="contact">
+
+    <div class="container">
+
+        <div class="section-label">
+            05 / CONTACT
+        </div>
+
+        <h2 class="section-title">
+            Let's build<br>
+            something better.
+        </h2>
+
+        <p class="section-description">
+            For product inquiries, project consultation and
+            customized solutions, please contact NeoCrystal.
+        </p>
+
+
+        <div class="contact-box">
+
+            <div>
+
+                <h3>
+                    NeoCrystal
+                </h3>
+
+                <p>
+                    Advanced PMMA Solutions
+                </p>
+
+                <p>
+                    Transparent materials,
+                    reimagined.
+                </p>
+
+            </div>
+
+
+            <div class="contact-info">
+
+                <p>
+                    <strong>Phone</strong>
+                    070-8080-3414
+                </p>
+
+                <p>
+                    <strong>Business</strong>
+                    Product & Project Inquiry
+                </p>
+
+                <p>
+                    <strong>Location</strong>
+                    Republic of Korea
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div class="footer-inner">
+
+        <div>
+            <strong>NeoCrystal</strong>
+        </div>
+
+        <p>
+            © 2026 NeoCrystal. All Rights Reserved.
+        </p>
+
+    </div>
+
+</footer>
+
+</body> </html>
