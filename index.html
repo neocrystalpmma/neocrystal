@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
@@ -27,6 +28,11 @@ body {
 a {
     color: inherit;
     text-decoration: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
 }
 
 .container {
@@ -85,24 +91,29 @@ nav a:hover {
     padding-top: 78px;
     display: flex;
     align-items: center;
+    position: relative;
+    overflow: hidden;
     background:
-        linear-gradient(120deg, #f5f5f5 0%, #ffffff 55%, #eeeeee 100%);
+        linear-gradient(90deg, rgba(255,255,255,0.96) 0%, rgba(255,255,255,0.78) 42%, rgba(255,255,255,0.12) 100%),
+        url("hero-neocrystal.png") center center / cover no-repeat;
 }
 
 .hero-content {
-    max-width: 850px;
+    max-width: 760px;
+    position: relative;
+    z-index: 2;
 }
 
 .hero-label {
     font-size: 14px;
     letter-spacing: 4px;
-    color: #777;
+    color: #666;
     margin-bottom: 25px;
 }
 
 .hero h1 {
-    font-size: clamp(48px, 7vw, 88px);
-    line-height: 1.05;
+    font-size: clamp(48px, 7vw, 82px);
+    line-height: 1.08;
     letter-spacing: -3px;
     margin-bottom: 25px;
 }
@@ -111,13 +122,13 @@ nav a:hover {
     font-size: 24px;
     font-weight: 400;
     color: #555;
-    margin-bottom: 35px;
+    margin-bottom: 25px;
 }
 
 .hero p {
     max-width: 650px;
     font-size: 17px;
-    color: #555;
+    color: #444;
 }
 
 .hero-button {
@@ -127,6 +138,7 @@ nav a:hover {
     border: 1px solid #111;
     font-size: 14px;
     transition: 0.3s;
+    background: rgba(255,255,255,0.75);
 }
 
 .hero-button:hover {
@@ -195,16 +207,27 @@ section {
 }
 
 .product-card {
-    min-height: 360px;
-    padding: 40px;
+    min-height: 430px;
     border: 1px solid #e5e5e5;
     background: #fff;
+    overflow: hidden;
     transition: 0.3s;
 }
 
 .product-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 15px 40px rgba(0,0,0,0.06);
+}
+
+.product-image {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    background: #f5f5f5;
+}
+
+.product-content {
+    padding: 30px 35px 35px;
 }
 
 .product-number {
@@ -214,8 +237,8 @@ section {
 }
 
 .product-card h3 {
-    font-size: 27px;
-    margin: 25px 0 18px;
+    font-size: 25px;
+    margin: 18px 0 15px;
 }
 
 .product-card p {
@@ -292,22 +315,34 @@ section {
 
 /* PROJECT */
 
-.project-box {
-    min-height: 330px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+.project-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.project-card {
     border: 1px solid #ddd;
-    background: linear-gradient(135deg, #f5f5f5, #ffffff);
+    background: #fff;
+    overflow: hidden;
 }
 
-.project-box h3 {
-    font-size: 28px;
-    margin-bottom: 15px;
+.project-card img {
+    width: 100%;
+    height: 330px;
+    object-fit: cover;
 }
 
-.project-box p {
+.project-content {
+    padding: 30px;
+}
+
+.project-content h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.project-content p {
     color: #777;
 }
 
@@ -377,6 +412,7 @@ footer {
 
     .hero {
         min-height: 650px;
+        background-position: 65% center;
     }
 
     .hero h1 {
@@ -396,7 +432,8 @@ footer {
     }
 
     .about-grid,
-    .contact-box {
+    .contact-box,
+    .project-grid {
         grid-template-columns: 1fr;
         gap: 35px;
     }
@@ -419,6 +456,7 @@ footer {
     }
 }
 </style>
+
 </head>
 
 <body>
@@ -427,17 +465,17 @@ footer {
     <div class="container header-inner">
         <div class="logo">Neo<span>Crystal</span></div>
 
-        <nav>
-            <a href="#about">회사소개</a>
-            <a href="#products">제품</a>
-            <a href="#performance">성능</a>
-            <a href="#application">적용분야</a>
-            <a href="#projects">프로젝트</a>
-            <a href="#contact">문의</a>
-        </nav>
-    </div>
-</header>
+    <nav>
+        <a href="#about">회사소개</a>
+        <a href="#products">제품</a>
+        <a href="#performance">성능</a>
+        <a href="#application">적용분야</a>
+        <a href="#projects">프로젝트</a>
+        <a href="#contact">문의</a>
+    </nav>
+</div>
 
+</header>
 
 <!-- HERO -->
 
@@ -445,331 +483,465 @@ footer {
     <div class="container">
         <div class="hero-content">
 
-            <div class="hero-label">
-                ADVANCED PMMA SOLUTIONS
-            </div>
-
-            <h1>
-               <h1>건축과 공간을 위한<br>고성능 PMMA 솔루션</h1>
-
-<p>
-투명성, 강도, 경량성.<br>
-NeoCrystal은 PMMA의 새로운 가능성을 제안합니다.
-</p>
-            </h1>
-
-            <h2>
-                NeoCrystal 고성능 PMMA 솔루션
-            </h2>
-
-            <p>
-                고투명 PMMA Sheet부터 건축·인테리어용 Door까지,<br>
-공간에 필요한 새로운 투명 소재 솔루션을 제공합니다.
-            </p>
-
-            <a href="#products" class="hero-button">
-                제품 살펴보기
-            </a>
-
+        <div class="hero-label">
+            ADVANCED PMMA SOLUTIONS
         </div>
-    </div>
-</section>
 
+        <h1>
+            건축과 공간을 위한<br>
+            고성능 PMMA 솔루션
+        </h1>
+
+        <h2>
+            NeoCrystal 고성능 PMMA 솔루션
+        </h2>
+
+        <p>
+            투명성, 강도, 경량성.<br>
+            NeoCrystal은 PMMA의 새로운 가능성을 제안합니다.
+            <br><br>
+            고투명 PMMA Sheet부터 건축·인테리어용 Door까지,
+            공간에 필요한 새로운 투명 소재 솔루션을 제공합니다.
+        </p>
+
+        <a href="#products" class="hero-button">
+            제품 살펴보기
+        </a>
+
+    </div>
+</div>
+
+</section>
 
 <!-- ABOUT -->
 
 <section id="about" class="about">
     <div class="container">
 
-        <div class="section-label">ABOUT NEOCRYSTAL</div>
+    <div class="section-label">ABOUT NEOCRYSTAL</div>
 
-        <h2 class="section-title">
-            새로운 PMMA의 기준을 생각합니다.
-        </h2>
+    <h2 class="section-title">
+        새로운 PMMA의 기준을 생각합니다.
+    </h2>
 
-        <div class="about-grid">
+    <div class="about-grid">
 
-            <div>
-                <p class="section-text">
-                    NeoCrystal은 고투명·고경도·경량 특성을 갖춘
-                    고성능 PMMA 소재를 바탕으로 건축과 인테리어,
-                    욕실 및 다양한 산업 분야에 새로운 소재 솔루션을
-                    제안합니다.
-                    <br><br>
-                    단순히 투명한 플라스틱을 공급하는 것을 넘어,
-                    기존 소재가 가진 무게와 안전성, 가공성 등의
-                    한계를 보완할 수 있는 새로운 가능성을 찾고 있습니다.
-                </p>
-            </div>
-
-            <div class="about-box">
-                <h3>Material Beyond Transparency</h3>
-
-                <p>
-                    NeoCrystal의 핵심은 단순한 투명성에 머물지 않습니다.
-                    높은 투명도와 표면 경도, 가벼운 무게,
-                    다양한 가공 가능성을 바탕으로
-                    건축 및 인테리어 소재의 새로운 활용 가능성을 제안합니다.
-                </p>
-            </div>
-
+        <div>
+            <p class="section-text">
+                NeoCrystal은 고투명·고경도·경량 특성을 갖춘
+                고성능 PMMA 소재를 바탕으로 건축과 인테리어,
+                욕실 및 다양한 산업 분야에 새로운 소재 솔루션을
+                제안합니다.
+                <br><br>
+                단순히 투명한 플라스틱을 공급하는 것을 넘어,
+                기존 소재가 가진 무게와 안전성, 가공성 등의
+                한계를 보완할 수 있는 새로운 가능성을 찾고 있습니다.
+            </p>
         </div>
-    </div>
-</section>
 
+        <div class="about-box">
+            <h3>Material Beyond Transparency</h3>
+
+            <p>
+                NeoCrystal의 핵심은 단순한 투명성에 머물지 않습니다.
+                높은 투명도와 표면 경도, 가벼운 무게,
+                다양한 가공 가능성을 바탕으로
+                건축 및 인테리어 소재의 새로운 활용 가능성을 제안합니다.
+            </p>
+        </div>
+
+    </div>
+</div>
+
+</section>
 
 <!-- PRODUCTS -->
 
 <section id="products">
     <div class="container">
 
-        <div class="section-label">PRODUCTS</div>
+    <div class="section-label">PRODUCTS</div>
 
-        <h2 class="section-title">
-            NeoCrystal Products
-        </h2>
+    <h2 class="section-title">
+        NeoCrystal Products
+    </h2>
 
-        <div class="product-grid">
+    <div class="product-grid">
 
-            <div class="product-card">
-                <div class="product-number">01 / SHEET</div>
+        <div class="product-card">
 
-                <h3>NeoCrystal Sheet</h3>
+            <img
+                src="neocrystal-sheet.png"
+                alt="NeoCrystal Sheet"
+                class="product-image"
+            >
 
-                <p>
-                    건축·인테리어·욕실 등 다양한 공간에 적용할 수 있는 고성능 투명 소재입니다.
-                </p>
-            </div>
+            <div class="product-content">
 
+                <div class="product-number">
+                    01 / SHEET
+                </div>
 
-            <div class="product-card">
-                <div class="product-number">02 / DOOR</div>
-
-                <h3>NeoCrystal Door</h3>
-
-                <p>
-                  건축·인테리어용 PMMA Door 및 자동문 솔루션.
-높은 투명성과 경량성을 바탕으로 다양한 공간에 새로운 가능성을 제안합니다.
-                </p>
-            </div>
-
-
-            <div class="product-card">
-                <div class="product-number">03 / CUSTOM</div>
-
-                <h3>Custom Solutions</h3>
+                <h3>
+                    NeoCrystal Sheet
+                </h3>
 
                 <p>
-                    사용 환경과 디자인 요구에 맞춘
-                    다양한 가공 및 적용 솔루션을 검토합니다.
-                    프로젝트별 맞춤 상담이 가능합니다.
+                    건축·인테리어·욕실 등 다양한 공간에 적용할 수 있는
+                    고성능 투명 소재입니다.
                 </p>
+
             </div>
 
         </div>
-    </div>
-</section>
 
+
+        <div class="product-card">
+
+            <img
+                src="neocrystal-lighting-door.png"
+                alt="NeoCrystal Lighting Door"
+                class="product-image"
+            >
+
+            <div class="product-content">
+
+                <div class="product-number">
+                    02 / DOOR
+                </div>
+
+                <h3>
+                    NeoCrystal Door
+                </h3>
+
+                <p>
+                    건축·인테리어용 PMMA Door 및 자동문 솔루션.
+                    높은 투명성과 경량성을 바탕으로 다양한 공간에
+                    새로운 가능성을 제안합니다.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="product-card">
+
+            <img
+                src="neocrystal-lighting-auto-door.png"
+                alt="NeoCrystal Lighting Automatic Door"
+                class="product-image"
+            >
+
+            <div class="product-content">
+
+                <div class="product-number">
+                    03 / AUTOMATIC DOOR
+                </div>
+
+                <h3>
+                    Lighting Automatic Door
+                </h3>
+
+                <p>
+                    투명 소재와 자동문 기술을 결합한
+                    건축·상업공간용 솔루션입니다.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+</section>
 
 <!-- PERFORMANCE -->
 
 <section id="performance" class="performance">
     <div class="container">
 
-        <div class="section-label">PERFORMANCE</div>
+    <div class="section-label">
+        PERFORMANCE
+    </div>
 
-        <h2 class="section-title">
-            NeoCrystal Performance
-        </h2>
+    <h2 class="section-title">
+        NeoCrystal Performance
+    </h2>
 
-        <div class="performance-grid">
+    <div class="performance-grid">
 
-            <div class="performance-item">
-                <div class="performance-value">≥92%</div>
-                <div class="performance-name">
-                    높은 광투과율
-                </div>
+        <div class="performance-item">
+            <div class="performance-value">
+                ≥92%
             </div>
 
-            <div class="performance-item">
-                <div class="performance-value">7H</div>
-                <div class="performance-name">
-                    높은 표면 경도
-                </div>
+            <div class="performance-name">
+                높은 광투과율
+            </div>
+        </div>
+
+
+        <div class="performance-item">
+            <div class="performance-value">
+                7H
             </div>
 
-            <div class="performance-item">
-             <div class="performance-value">52%</div>
-<div class="performance-name">
-    유리 대비 약 52%의 무게
-</div>
-                </div>
+            <div class="performance-name">
+                높은 표면 경도
+            </div>
+        </div>
+
+
+        <div class="performance-item">
+            <div class="performance-value">
+                52%
             </div>
 
-            <div class="performance-item">
-                <div class="performance-value">0.18–0.25</div>
-                <div class="performance-name">
-                    열전도율 W/m·K
-                </div>
+            <div class="performance-name">
+                유리 대비 약 52%의 무게
+            </div>
+        </div>
+
+
+        <div class="performance-item">
+            <div class="performance-value">
+                0.18–0.25
             </div>
 
+            <div class="performance-name">
+                열전도율 W/m·K
+            </div>
         </div>
 
     </div>
-</section>
 
+</div>
+
+</section>
 
 <!-- APPLICATION -->
 
 <section id="application" class="application">
     <div class="container">
 
-        <div class="section-label">APPLICATION</div>
-
-        <h2 class="section-title">
-            다양한 공간에 적용됩니다.
-        </h2>
-
-        <div class="application-grid">
-
-            <div class="application-item">
-                <h3>건축</h3>
-                <p>
-                    건축 내·외장 및 투명 소재가 필요한
-                    다양한 공간에 적용할 수 있습니다.
-                </p>
-            </div>
-
-            <div class="application-item">
-                <h3>인테리어</h3>
-                <p>
-                    파티션, 장식 및 공간 디자인 등
-                    투명성과 디자인을 동시에 요구하는 분야.
-                </p>
-            </div>
-
-            <div class="application-item">
-                <h3>욕실</h3>
-                <p>
-                    욕실 파티션 및 인테리어 요소 등
-투명 소재의 적용 가능성을 검토할 수 있는 공간.
-                </p>
-            </div>
-
-            <div class="application-item">
-                <h3>상업공간</h3>
-                <p>
-                    호텔, 리테일, 전시장 및 다양한 상업 공간의 파티션과 자동문 등 투명 소재가 필요한 공간.
-                </p>
-            </div>
-
-            <div class="application-item">
-                <h3>가구·디자인</h3>
-                <p>
-                    투명 소재를 활용한 가구와
-                    다양한 디자인 제품.
-                </p>
-            </div>
-
-            <div class="application-item">
-                <h3>프로젝트 맞춤 적용</h3>
-                <p>
-                    설계 조건과 사용 환경에 맞춘
-                    맞춤형 소재 적용을 상담합니다.
-                </p>
-            </div>
-
-        </div>
+    <div class="section-label">
+        APPLICATION
     </div>
-</section>
 
+    <h2 class="section-title">
+        다양한 공간에 적용됩니다.
+    </h2>
+
+    <div class="application-grid">
+
+        <div class="application-item">
+            <h3>건축</h3>
+            <p>
+                건축 내·외장 및 투명 소재가 필요한
+                다양한 공간에 적용할 수 있습니다.
+            </p>
+        </div>
+
+        <div class="application-item">
+            <h3>인테리어</h3>
+            <p>
+                파티션, 장식 및 공간 디자인 등
+                투명성과 디자인을 동시에 요구하는 분야.
+            </p>
+        </div>
+
+        <div class="application-item">
+            <h3>욕실</h3>
+            <p>
+                욕실 파티션 및 인테리어 요소 등
+                투명 소재의 적용 가능성을 검토할 수 있는 공간.
+            </p>
+        </div>
+
+        <div class="application-item">
+            <h3>상업공간</h3>
+            <p>
+                호텔, 리테일, 전시장 및 다양한 상업 공간의
+                파티션과 자동문 등 투명 소재가 필요한 공간.
+            </p>
+        </div>
+
+        <div class="application-item">
+            <h3>가구·디자인</h3>
+            <p>
+                투명 소재를 활용한 가구와
+                다양한 디자인 제품.
+            </p>
+        </div>
+
+        <div class="application-item">
+            <h3>프로젝트 맞춤 적용</h3>
+            <p>
+                설계 조건과 사용 환경에 맞춘
+                맞춤형 소재 적용을 상담합니다.
+            </p>
+        </div>
+
+    </div>
+</div>
+
+</section>
 
 <!-- PROJECTS -->
 
 <section id="projects">
     <div class="container">
 
-        <div class="section-label">REAL PROJECTS</div>
-
-        <h2 class="section-title">
-            실제 프로젝트
-        </h2>
-
-    <div class="project-box">
-    <div>
-        <h3>Applications &amp; Projects</h3>
-
-        <p>
-            NeoCrystal은 건축, 인테리어, 상업공간 등
-            다양한 공간에 적용되고 있습니다.<br>
-            실제 프로젝트와 적용 사례를 지속적으로 소개해 나가겠습니다.
-        </p>
+    <div class="section-label">
+        REAL PROJECTS
     </div>
+
+    <h2 class="section-title">
+        실제 프로젝트
+    </h2>
+
+    <div class="project-grid">
+
+        <div class="project-card">
+
+            <img
+                src="neocrystal-lighting-door.png"
+                alt="NeoCrystal Lighting Door 프로젝트"
+            >
+
+            <div class="project-content">
+
+                <h3>
+                    NeoCrystal Lighting Door
+                </h3>
+
+                <p>
+                    건축·인테리어 공간에 적용되는
+                    NeoCrystal 투명 Door 솔루션.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="project-card">
+
+            <img
+                src="neocrystal-lighting-auto-door.png"
+                alt="NeoCrystal Lighting Automatic Door 프로젝트"
+            >
+
+            <div class="project-content">
+
+                <h3>
+                    NeoCrystal Automatic Door
+                </h3>
+
+                <p>
+                    상업공간과 건축공간을 위한
+                    투명 자동문 적용 솔루션.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
 </div>
 
-    </div>
 </section>
-
 
 <!-- CONTACT -->
 
 <section id="contact" class="contact">
     <div class="container">
 
-        <div class="section-label">CONTACT</div>
+    <div class="section-label">
+        CONTACT
+    </div>
 
-        <h2 class="section-title">
-            프로젝트를 상담해 주세요.
-        </h2>
+    <h2 class="section-title">
+        프로젝트를 상담해 주세요.
+    </h2>
 
-        <div class="contact-box">
+    <div class="contact-box">
 
-         <div class="contact-info">
-    <h3>NeoCrystal</h3>
+        <div class="contact-info">
 
-    <p>
-        건축·인테리어 및 다양한 산업 분야에
-        고성능 PMMA 소재 솔루션을 제공합니다.
-        <br><br>
-        제품, 규격, 가공 및 프로젝트 적용에 관한
-        문의를 남겨주시면 검토 후 안내드리겠습니다.
-    </p>
-</div>
+            <h3>
+                NeoCrystal
+            </h3>
+
+            <p>
+                건축·인테리어 및 다양한 산업 분야에
+                고성능 PMMA 소재 솔루션을 제공합니다.
+                <br><br>
+                제품, 규격, 가공 및 프로젝트 적용에 관한
+                문의를 남겨주시면 검토 후 안내드리겠습니다.
+            </p>
+
+        </div>
 
 
-            <div>
+        <div>
 
-               <div class="contact-detail">
-    <strong>PHONE</strong>
-    <div>070-8080-3414</div>
-</div>
-<div class="contact-detail">
-    <strong>EMAIL</strong>
-    <div>neocrystal.pmma@gmail.com</div>
-</div>
-<div class="contact-detail">
-    <strong>사업분야</strong>
-    <div>고성능 PMMA 소재 솔루션</div>
-</div>
+            <div class="contact-detail">
+                <strong>
+                    PHONE
+                </strong>
+
+                <div>
+                    070-8080-3414
+                </div>
+            </div>
+
+
+            <div class="contact-detail">
+                <strong>
+                    EMAIL
+                </strong>
+
+                <div>
+                    neocrystal.pmma@gmail.com
+                </div>
+            </div>
+
+
+            <div class="contact-detail">
+                <strong>
+                    사업분야
+                </strong>
+
+                <div>
+                    고성능 PMMA 소재 솔루션
+                </div>
             </div>
 
         </div>
+
     </div>
+</div>
+
 </section>
 
-
 <footer>
-    <div class="container footer-inner">
 
-        <div>
-            © 2026 NeoCrystal. All Rights Reserved.
-        </div>
+<div class="container footer-inner">
 
-        <div>
-            Advanced PMMA Solutions
-        </div>
-
+    <div>
+        © 2026 NeoCrystal. All Rights Reserved.
     </div>
+
+    <div>
+        Advanced PMMA Solutions
+    </div>
+
+</div>
+
 </footer>
 
 </body>
