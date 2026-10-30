@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="建築・インテリア向け高性能PMMAソリューション、NeoCrystal。">
+<title>NeoCrystal | 高性能PMMAソリューション</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:Arial,"Noto Sans JP","Yu Gothic",Meiryo,sans-serif;color:#111;background:#fff;line-height:1.8}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.container{width:90%;max-width:1180px;margin:0 auto}
+header{position:fixed;top:0;left:0;width:100%;background:rgba(255,255,255,.96);border-bottom:1px solid #eee;z-index:1000}
+.header-inner{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{font-size:26px;font-weight:800;letter-spacing:1px;white-space:nowrap}
+.logo span{font-weight:400}
+nav{display:flex;gap:24px;font-size:13px;flex-wrap:wrap}
+nav a{color:#333}nav a:hover{color:#888}
+.language-links{display:flex;gap:9px;font-size:12px;color:#666;white-space:nowrap}
+.hero{min-height:760px;padding-top:78px;display:flex;align-items:center;position:relative;overflow:hidden;background:linear-gradient(90deg,rgba(255,255,255,.96) 0%,rgba(255,255,255,.78) 42%,rgba(255,255,255,.12) 100%),url("../hero-neocrystal.png") center center/cover no-repeat}
+.hero-content{max-width:760px;position:relative;z-index:2}
+.hero-label{font-size:13px;letter-spacing:3px;color:#666;margin-bottom:25px}
+.hero h1{font-size:clamp(40px,6vw,72px);line-height:1.2;letter-spacing:-1px;margin-bottom:25px}
+.hero h2{font-size:23px;font-weight:400;color:#555;margin-bottom:25px}
+.hero p{max-width:650px;font-size:16px;color:#444}
+.hero-button{display:inline-block;margin-top:35px;padding:13px 28px;border:1px solid #111;font-size:14px;transition:.3s;background:rgba(255,255,255,.75)}
+.hero-button:hover{background:#111;color:#fff}
+section{padding:105px 0}
+.section-label{font-size:12px;letter-spacing:3px;color:#888;margin-bottom:15px}
+.section-title{font-size:clamp(30px,4vw,42px);letter-spacing:-.5px;margin-bottom:42px;line-height:1.4}
+.section-text{color:#555;max-width:780px}
+.about{background:#fafafa}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:65px;align-items:center}
+.about-box{padding:40px;background:#fff;border:1px solid #eee}
+.about-box h3{font-size:23px;margin-bottom:18px}
+.about-box p{color:#555}
+.product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:25px}
+.product-card{min-height:430px;border:1px solid #e5e5e5;background:#fff;overflow:hidden;transition:.3s}
+.product-card:hover{transform:translateY(-5px);box-shadow:0 15px 40px rgba(0,0,0,.06)}
+.product-image-link{display:block;cursor:zoom-in}
+.product-image{width:100%;height:260px;object-fit:contain;background:#f5f5f5;transition:.3s}
+.product-image-link:hover .product-image{opacity:.9}
+.product-content{padding:28px 30px 32px}
+.product-number{font-size:12px;color:#999;letter-spacing:2px}
+.product-card h3{font-size:21px;margin:16px 0 13px;line-height:1.5}
+.product-card p{color:#666;font-size:14px}
+.performance{background:#111;color:#fff}
+.performance .section-label{color:#999}.performance .section-title{color:#fff}
+.performance-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#333}
+.performance-item{background:#111;padding:40px 25px;min-height:190px}
+.performance-value{font-size:clamp(27px,3vw,40px);font-weight:700;margin-bottom:10px}
+.performance-name{color:#aaa;font-size:13px}
+.application{background:#fafafa}
+.application-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.application-item{background:#fff;padding:30px;min-height:180px;border:1px solid #eee}
+.application-item h3{font-size:19px;margin-bottom:10px}
+.application-item p{color:#666;font-size:14px}
+.project-grid{display:grid;grid-template-columns:1fr 1fr;gap:25px}
+.project-card{border:1px solid #ddd;background:#fff;overflow:hidden}
+.project-card img{width:100%;height:330px;object-fit:cover}
+.project-content{padding:30px}.project-content h3{font-size:22px;margin-bottom:10px}.project-content p{color:#777}
+.image-modal{display:none;position:fixed;z-index:3000;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,.88);align-items:center;justify-content:center;padding:30px}
+.image-modal.active{display:flex}
+.image-modal img{max-width:95%;max-height:90vh;width:auto;height:auto;object-fit:contain}
+.image-modal-close{position:absolute;top:20px;right:30px;color:#fff;font-size:42px;font-weight:300;cursor:pointer;line-height:1}
+.contact{background:#f5f5f5}
+.contact-box{display:grid;grid-template-columns:1fr 1fr;gap:50px}
+.contact-info h3{font-size:28px;margin-bottom:20px}.contact-info p{color:#666}
+.contact-detail{margin-top:28px}
+.contact-detail strong{display:block;font-size:12px;color:#888;letter-spacing:1px;margin-bottom:4px}
+.contact-detail div{font-size:20px;overflow-wrap:anywhere}
+footer{background:#111;color:#888;padding:32px 0;font-size:12px}
+.footer-inner{display:flex;justify-content:space-between;gap:20px}
+@media(max-width:900px){
+ .header-inner{min-height:70px;flex-wrap:wrap;padding:12px 0}
+ nav{gap:12px}
+ .hero{min-height:650px;background-position:65% center}
+ section{padding:75px 0}
+ .about-grid,.contact-box,.project-grid{grid-template-columns:1fr;gap:30px}
+ .product-grid,.application-grid{grid-template-columns:1fr}
+ .performance-grid{grid-template-columns:1fr 1fr}
+ .footer-inner{flex-direction:column}
+ .product-image{height:240px}
+}
+@media(max-width:560px){
+ .header-inner{align-items:flex-start}
+ nav{display:none}
+ .hero h1{font-size:40px}
+ .hero h2{font-size:19px}
+ .language-links{margin-left:auto}
+ .section-title{font-size:30px}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="container header-inner">
+    <div class="logo">Neo<span>Crystal</span></div>
+    <nav>
+      <a href="#about">会社概要</a>
+      <a href="#products">製品</a>
+      <a href="#performance">性能</a>
+      <a href="#application">用途</a>
+      <a href="#projects">プロジェクト</a>
+      <a href="#contact">お問い合わせ</a>
+    </nav>
+    <div class="language-links"><a href="../index.html">KR</a><span>|</span><a href="../en/">EN</a><span>|</span><strong>JP</strong></div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container"><div class="hero-content">
+    <div class="hero-label">ADVANCED PMMA SOLUTIONS</div>
+    <h1>建築と空間のための<br>高性能PMMAソリューション</h1>
+    <h2>NeoCrystal 高性能PMMAソリューション</h2>
+    <p>透明性、強度、軽量性。<br>NeoCrystalは、PMMAの新たな可能性をご提案します。<br><br>高透明PMMAシートから建築・インテリア向けドアまで、空間に求められる新しい透明素材ソリューションを提供します。</p>
+    <a href="#products" class="hero-button">製品を見る</a>
+  </div></div>
+</section>
+
+<section id="about" class="about">
+  <div class="container">
+    <div class="section-label">ABOUT NEOCRYSTAL</div>
+    <h2 class="section-title">PMMAの新しい基準を考える。</h2>
+    <div class="about-grid">
+      <div><p class="section-text">NeoCrystalは、高い透明性・表面硬度・軽量性を備えた高性能PMMA素材を基に、建築、インテリア、浴室をはじめ、さまざまな産業分野に新しい素材ソリューションをご提案します。<br><br>単に透明なプラスチックを供給するだけでなく、従来素材の重量、安全性、加工性などに関する課題を補う新たな可能性を追求しています。</p></div>
+      <div class="about-box"><h3>Material Beyond Transparency</h3><p>NeoCrystalの価値は、透明性だけにとどまりません。高い透明度と表面硬度、軽量性、さまざまな加工への対応可能性を活かし、建築・インテリア素材の新しい活用方法をご提案します。</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="products">
+  <div class="container">
+    <div class="section-label">PRODUCTS</div>
+    <h2 class="section-title">NeoCrystal 製品</h2>
+    <div class="product-grid">
+      <div class="product-card">
+        <a href="#" class="product-image-link" onclick="openImage('../neocrystal-sheet.png');return false;"><img src="../neocrystal-sheet.png" alt="NeoCrystal Sheet" class="product-image"></a>
+        <div class="product-content"><div class="product-number">01 / SHEET</div><h3>NeoCrystal Sheet</h3><p>建築・インテリア・浴室など、さまざまな空間への適用を想定した高性能透明素材です。</p></div>
+      </div>
+      <div class="product-card">
+        <a href="#" class="product-image-link" onclick="openImage('../neocrystal-lighting-door.png');return false;"><img src="../neocrystal-lighting-door.png" alt="NeoCrystal Lighting Door" class="product-image"></a>
+        <div class="product-content"><div class="product-number">02 / DOOR</div><h3>NeoCrystal Lighting Door</h3><p>建築・インテリア向けPMMAドアおよび自動ドアソリューション。高い透明性と軽量性を活かし、空間に新たな可能性をご提案します。</p></div>
+      </div>
+      <div class="product-card">
+        <a href="#" class="product-image-link" onclick="openImage('../neocrystal-lighting-auto-door.png');return false;"><img src="../neocrystal-lighting-auto-door.png" alt="NeoCrystal Lighting Automatic Door" class="product-image"></a>
+        <div class="product-content"><div class="product-number">03 / AUTOMATIC DOOR</div><h3>NeoCrystal Lighting Automatic Door</h3><p>透明素材と自動ドア技術を組み合わせた、建築・商業空間向けソリューションです。</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="performance" class="performance">
+  <div class="container">
+    <div class="section-label">PERFORMANCE</div>
+    <h2 class="section-title">NeoCrystalの性能</h2>
+    <div class="performance-grid">
+      <div class="performance-item"><div class="performance-value">≥92%</div><div class="performance-name">高い光線透過率</div></div>
+      <div class="performance-item"><div class="performance-value">7H</div><div class="performance-name">高い表面硬度</div></div>
+      <div class="performance-item"><div class="performance-value">52%</div><div class="performance-name">ガラスの約52％の重量</div></div>
+      <div class="performance-item"><div class="performance-value">0.18–0.25</div><div class="performance-name">熱伝導率 W/m·K</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="application" class="application">
+  <div class="container">
+    <div class="section-label">APPLICATION</div>
+    <h2 class="section-title">さまざまな空間での活用をご提案します。</h2>
+    <div class="application-grid">
+      <div class="application-item"><h3>建築</h3><p>建築の内装・外装など、透明素材が求められるさまざまな空間への適用をご提案します。</p></div>
+      <div class="application-item"><h3>インテリア</h3><p>パーティション、装飾、空間デザインなど、透明性とデザイン性の両立が求められる分野。</p></div>
+      <div class="application-item"><h3>浴室</h3><p>浴室パーティションやインテリア部材など、透明素材の活用可能性を検討できる空間。</p></div>
+      <div class="application-item"><h3>商業空間</h3><p>ホテル、店舗、展示場などのパーティションや自動ドアをはじめ、透明素材が求められる空間。</p></div>
+      <div class="application-item"><h3>家具・デザイン</h3><p>透明素材を活かした家具や、さまざまなデザイン製品。</p></div>
+      <div class="application-item"><h3>プロジェクト別のご提案</h3><p>設計条件や使用環境に合わせた素材の活用についてご相談を承ります。</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="container">
+    <div class="section-label">REAL PROJECTS</div>
+    <h2 class="section-title">プロジェクト事例</h2>
+    <!-- 実際の施工写真が用意でき次第、こちらに事例を追加します。現時点では製品画像を施工写真として使用していません。 -->
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="container">
+    <div class="section-label">CONTACT</div>
+    <h2 class="section-title">プロジェクトについてご相談ください。</h2>
+    <div class="contact-box">
+      <div class="contact-info"><h3>NeoCrystal</h3><p>建築・インテリアをはじめ、さまざまな産業分野に高性能PMMA素材ソリューションをご提供します。<br><br>製品、規格、加工、プロジェクトへの適用に関するお問い合わせをお待ちしております。</p></div>
+      <div>
+        <div class="contact-detail"><strong>PHONE</strong><div>070-8080-3414</div></div>
+        <div class="contact-detail"><strong>EMAIL</strong><div>neocrystal.pmma@gmail.com</div></div>
+        <div class="contact-detail"><strong>事業分野</strong><div>高性能PMMA素材ソリューション</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="imageModal" class="image-modal" onclick="closeImage(event)">
+  <span class="image-modal-close" onclick="closeImage(event)">×</span>
+  <img id="modalImage" src="" alt="NeoCrystal 製品">
+</div>
+
+<footer><div class="container footer-inner"><div>© 2026 NeoCrystal. All Rights Reserved.</div><div>Advanced PMMA Solutions</div></div></footer>
+<script>
+function openImage(imageSrc){
+  const modal=document.getElementById("imageModal");
+  const modalImage=document.getElementById("modalImage");
+  modalImage.src=imageSrc;
+  modal.classList.add("active");
+}
+function closeImage(event){
+  if(event.target.id==="imageModal"||event.target.classList.contains("image-modal-close")){
+    document.getElementById("imageModal").classList.remove("active");
+  }
+}
+document.addEventListener("keydown",function(event){
+  if(event.key==="Escape") document.getElementById("imageModal").classList.remove("active");
+});
+</script>
+</body>
+</html>
